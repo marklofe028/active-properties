@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Active Properties</title>
 
     <!-- Bootstrap CSS -->
     {{--<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">--}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,21 +30,21 @@
     </style>
 </head>
 <body>
-<div id="app">
+<div id="">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
-                {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"--}}
-                        {{--data-target="#app-navbar-collapse">--}}
-                    {{--<span class="sr-only">Toggle Navigation</span>--}}
-                    {{--<span class="icon-bar"></span>--}}
-                    {{--<span class="icon-bar"></span>--}}
-                    {{--<span class="icon-bar"></span>--}}
-                {{--</button>--}}
+            {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"--}}
+            {{--data-target="#app-navbar-collapse">--}}
+            {{--<span class="sr-only">Toggle Navigation</span>--}}
+            {{--<span class="icon-bar"></span>--}}
+            {{--<span class="icon-bar"></span>--}}
+            {{--<span class="icon-bar"></span>--}}
+            {{--</button>--}}
 
-                <!-- Branding Image -->
+            <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -86,10 +89,13 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        @yield('content')
+    {{--<div class="container">--}}
+    {{--@yield('content')--}}
+    {{--</div>--}}
+    <div id="app">
+        <example></example>
+        <layout></layout>
     </div>
-
     <!-- jQuery -->
     {{--<script src="//code.jquery.com/jquery.js"></script>--}}
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
@@ -106,6 +112,8 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js"></script>
     <!-- App scripts -->
-@stack('scripts')
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+{{--@stack('scripts')--}}
 </body>
 </html>
